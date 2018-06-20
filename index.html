@@ -10,14 +10,14 @@
                 window.web3 = new Web3(web3.currentProvider);
 			} else {
                 console.log('No Web3 Detected... using HTTP Provider')
-                window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/CPWEQzL1SIL9zfUTNu7D"));
+                window.web3 = new Web3(new Web3.providers.HttpProvider("http://mainnet.infura.io/CPWEQzL1SIL9zfUTNu7D"));
             }
         })
 		if (typeof web3 !== 'undefined') {
             web3 = new Web3(web3.currentProvider);
         } else {
             // set the provider you want from Web3.providers
-            web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/CPWEQzL1SIL9zfUTNu7D"));
+            web3 = new Web3(new Web3.providers.HttpProvider("http://mainnet.infura.io/CPWEQzL1SIL9zfUTNu7D"));
         }
 		function getBalance() {
             var address, wei, balance
