@@ -1,47 +1,54 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="UTF-8">
-    	<script type="text/javascript" src="web3.min.js"></script>
-    	<script type="text/javascript">        
-		window.addEventListener('load', function () {
-            if (typeof web3 !== 'undefined') {
-                console.log('Web3 Detected! ' + web3.currentProvider.constructor.name)
-                window.web3 = new Web3(web3.currentProvider);
-			} else {
-                console.log('No Web3 Detected... using HTTP Provider')
-                window.web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/CPWEQzL1SIL9zfUTNu7D"));
-            }
-        })
-		if (typeof web3 !== 'undefined') {
-            web3 = new Web3(web3.currentProvider);
-        } else {
-            // set the provider you want from Web3.providers
-            web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/CPWEQzL1SIL9zfUTNu7D"));
-        }
-		function getBalance() {
-            var address, wei, balance
-            address = document.getElementById("address").value
-            try {
-                web3.eth.getBalance(address, function (error, wei) {
-                    if (!error) {
-                        var balance = web3.fromWei(wei, 'ether');
-                        document.getElementById("output").innerHTML = balance + " ETH";
-                    }
-                });
-            } catch (err) {
-                document.getElementById("output").innerHTML = err;
-            }
-        }
-	</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
 </head>
 <body>
-    <h1>Check ETH Balance</h1>
-    <p>Enter your Ethereum Address:</p>
-    <input type="text" size="50" id="address" />
-    <br /><button type="button" onClick="getBalance();">Get ETH Balance</button>
-    <br />
-    <br />
-    <div id="output"></div>
+
+<h1 style=text-align:center> September Week 1 </h1>
+<h1 style=text-align:center> Target left: 5,000,000 VNÐ </h1>
+
+<h2 style=text-align:center> Time </h2>
+
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 9, 2018 23:59:59").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+
 </body>
 </html>
