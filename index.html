@@ -303,7 +303,7 @@ const value = 1;
 
 var userAccount = web3.eth.accounts[0]
 
-KNX5.methods.PlayX5.send({ from: userAccount, value: web3.utils.toWei("0.001", "ether") });
+KNX5.methods.PlayX5().send({ from: userAccount, value: web3.utils.toWei("0.001", "ether") });
 
 //KNX5.playX5.send("1000", function(err, result) => { console.log(result) });
 
