@@ -105,9 +105,200 @@ tr:nth-child(even) {
 }
 
 </style>
+<script type="text/javascript">
+  window.addEventListener('load', async () => {
+      // Modern dapp browsers...
+      if (window.ethereum) {
+          window.web3 = new Web3(ethereum);
+          try {
+              // Request account access if needed
+              await ethereum.enable();
+              // Acccounts now exposed
+              //web3.eth.sendTransaction({/* ... */});
+          } catch (error) {
+              // User denied account access...
+          }
+      }
+      // Legacy dapp browsers...
+      else if (window.web3) {
+          window.web3 = new Web3(web3.currentProvider);
+          // Acccounts always exposed
+          // web3.eth.sendTransaction({/* ... */});
+      }
+      // Non-dapp browsers...
+      else {
+          console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+      }
+  });
+  
+  var abi = [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawToken",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "name": "balance",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawEth",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "Playforfreetoken",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "PlayX5",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "choose_a_number_to_chaos_the_algo",
+          "type": "uint256"
+        }
+      ],
+      "name": "shake",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "betvalue",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "win",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "name": "wonamount",
+          "type": "uint256"
+        }
+      ],
+      "name": "PlayResult",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "make_chaos",
+          "type": "bytes32"
+        }
+      ],
+      "name": "Shake",
+      "type": "event"
+    }
+  ];
+  const address = '0x2293217830650bA643847700579D3148e506653A'
+  
+  function initContract (contract) {
+  const MiniToken = contract(abi)
+  const miniToken = MiniToken.at(address)
+  listenForClicks(miniToken)
+}
+
+  function listenForClicks (miniToken) {
+    var button = document.querySelector('button.transferFunds')
+    button.addEventListener('click', function() {
+      miniToken.transfer("0x2293217830650bA643847700579D3148e506653A", 10000, { from: addr })
+      .then(function (txHash) {
+        console.log('Transaction sent')
+        console.dir(txHash)
+        waitForTxToBeMined(txHash)
+      })
+      .catch(console.error)
+    })
+  }
+
+</script>
 </head>
 <body>
-
+    <button class="transferFunds">Send Money!</button>
 <div class="grid-container">
   <div class="header">
     <h2 style="color:green">Lucky Roll</h2>
@@ -128,7 +319,7 @@ tr:nth-child(even) {
     <td>20%</td>
   </tr>
   </table>
-  <button class="button button2" onclick="alert('Congrats! X5 your ETH')" style="float: right;">Play</button>
+  <button class="button button2" onclick=playX5() style="float: right;">Play</button>
   
   </div>
   <div class="middle" style="background-color:#bbb;"> 
@@ -173,136 +364,6 @@ tr:nth-child(even) {
   <p>From Knowchain Team. Copyright 2019 @ Knowchain</p>
   </div>
 </div>
-<script>
-window.addEventListener('load', async () => {
-    // Modern dapp browsers...
-    if (window.ethereum) {
-        window.web3 = new Web3(ethereum);
-        try {
-            // Request account access if needed
-            await ethereum.enable();
-            // Acccounts now exposed
-            //web3.eth.sendTransaction({/* ... */});
-        } catch (error) {
-            // User denied account access...
-        }
-    }
-    // Legacy dapp browsers...
-    else if (window.web3) {
-        window.web3 = new Web3(web3.currentProvider);
-        // Acccounts always exposed
-        // web3.eth.sendTransaction({/* ... */});
-    }
-    // Non-dapp browsers...
-    else {
-        console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
-    }
-});
-  
-const Eth = require('ethjs-query')
-const EthContract = require('ethjs-contract')
 
-function startApp(web3) {
-  const eth = new Eth(web3.currentProvider)
-  const contract = new EthContract(eth)
-  initContract(contract)
-}
-
-const abi = [{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"name": "tokens",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [
-			{
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "tokenOwner",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"name": "tokens",
-				"type": "uint256"
-			}
-		],
-		"name": "transfer",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "tokenOwner",
-				"type": "address"
-			},
-			{
-				"name": "spender",
-				"type": "address"
-			}
-		],
-		"name": "allowance",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-  }]
-  const address = '0x2293217830650bA643847700579D3148e506653A'
-  
-  function initContract (contract) {
-  const MiniToken = contract(abi)
-  const miniToken = MiniToken.at(address)
-  listenForClicks(miniToken)
-}
-
-</script>
 </body>
 </html>
