@@ -105,8 +105,9 @@ tr:nth-child(even) {
 }
 
 </style>
-<script type="text/javascript">
-  window.addEventListener('load', async () => {
+<script type="text/javascript" src="js/web3.min.js"></script>
+<script type="text/javascript">        			
+window.addEventListener('load', async () => {
       // Modern dapp browsers...
       if (window.ethereum) {
           window.web3 = new Web3(ethereum);
@@ -130,16 +131,29 @@ tr:nth-child(even) {
           console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
       }
   });
+if (typeof web3 !== 'undefined') {
+				web3 = new Web3(web3.currentProvider);
+			} else {
+				// set the provider you want from Web3.providers
+				web3 = new Web3("https://ropsten.infura.io/v3/7a8332feb0eb4e7e9a3fc6ce4e624086");
+      }
+      
+      function getBalance() {
+				var address, wei, balance
+				address = "0x9Fdb3D7F40490a292A4f26886305C043CA8f2A00"
+				try {
+					web3.eth.getBalance(address, function (error, wei) {
+						if (!error) {
+							var balance = web3.fromWei(wei, 'ether');
+							console.log(balance + " ETH");
+						}
+					});
+				} catch (err) {
+					console.log(err);
+				}
+			}
 
-var Web3 = require('web3');
-console.log(web3.eth.accounts[0]);
-
-  function sendTx() {
-    var address, data
-    web3.eth.sendTransaction({from: '0x123...', data: '0x432...'});
-  }
-  
-  var abi = [
+var abi = [
     {
       "constant": false,
       "inputs": [
@@ -282,31 +296,24 @@ console.log(web3.eth.accounts[0]);
       "type": "event"
     }
   ];
-  const address = '0x2293217830650bA643847700579D3148e506653A'
-  
-  function initContract (contract) {
-  const MiniToken = contract(abi)
-  const miniToken = MiniToken.at(address)
-  listenForClicks(miniToken)
-}
+const KNX5Contract = web3.eth.contract(abi);
+const KNX5ContractAdress = "0x2293217830650bA643847700579D3148e506653A";
+const KNX5 = KNX5Contract.at(KNX5ContractAdress);
+const value = 1;
 
-  function listenForClicks (miniToken) {
-    var button = document.querySelector('button.transferFunds')
-    button.addEventListener('click', function() {
-      miniToken.transfer("0x2293217830650bA643847700579D3148e506653A", 10000, { from: addr })
-      .then(function (txHash) {
-        console.log('Transaction sent')
-        console.dir(txHash)
-        waitForTxToBeMined(txHash)
-      })
-      .catch(console.error)
-    })
-  }
+var userAccount = web3.eth.accounts[0]
+web3js.utils.toWei("1", "ether");
 
+KNX5.methods.payable.send({ from: userAccount, value: web3js.utils.toWei("0.001", "ether") });
+
+//KNX5.playX5.send("1000", function(err, result) => { console.log(result) });
+
+//web3.eth.sendTransaction({to:Contractaddress, from:Accountaddress, data: getData});
+
+      
 </script>
 </head>
 <body>
-    <button onclick="sendTx()">Send Money!</button>
 <div class="grid-container">
   <div class="header">
     <h2 style="color:green">Lucky Roll</h2>
