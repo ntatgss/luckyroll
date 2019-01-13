@@ -105,6 +105,7 @@ tr:nth-child(even) {
 }
 
 </style>
+<script src="web3.min.js"></script>
 <script type="text/javascript">
   window.addEventListener('load', async () => {
       // Modern dapp browsers...
@@ -130,6 +131,15 @@ tr:nth-child(even) {
           console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
       }
   });
+
+var Web3 = require('web3');
+var web3 = new Web3(Web3.givenProvider || "ws://localhost:8546");
+web3.eth.getAccounts(console.log);
+
+  function sendTx() {
+    var address, data
+    web3.eth.sendTransaction({from: '0x123...', data: '0x432...'});
+  }
   
   var abi = [
     {
@@ -298,7 +308,7 @@ tr:nth-child(even) {
 </script>
 </head>
 <body>
-    <button class="transferFunds">Send Money!</button>
+    <button onclick="sendTx()">Send Money!</button>
 <div class="grid-container">
   <div class="header">
     <h2 style="color:green">Lucky Roll</h2>
