@@ -302,9 +302,8 @@ const KNX5 = KNX5Contract.at(KNX5ContractAdress);
 const value = 1;
 
 var userAccount = web3.eth.accounts[0]
-web3js.utils.toWei("1", "ether");
 
-KNX5.methods.payable.send({ from: userAccount, value: web3js.utils.toWei("0.001", "ether") });
+KNX5.methods.payable.send({ from: userAccount, value: web3.utils.toWei("0.001", "ether") });
 
 //KNX5.playX5.send("1000", function(err, result) => { console.log(result) });
 
