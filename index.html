@@ -301,10 +301,23 @@ const KNX5ContractAdress = "0x2293217830650bA643847700579D3148e506653A";
 const KNX5 = KNX5Contract.at(KNX5ContractAdress);
 const value = 1;
 
+var fromAccount = web3.eth.accounts[0]
+var gasLimit = web3.eth.estimateGas({
+   to: "0xc4abd0339eb8d57087278718986382264244252f", 
+   data: "0xc6888fa10000000000000000000000000000000000000000000000000000000000000003"
+});
+console.log(gasLimit);
+
+const transactionObject = {
+  from: fromAccount,
+  gas: gasLimit,
+  gasPrice: 20000000000,
+};
 var userAccount = web3.eth.accounts[0]
 
-KNX5.methods.PlayX5().send({ from: userAccount, value: web3.utils.toWei("0.001", "ether") });
-
+function PlayX5(value) {
+    KNX5.PlayX5.send(1000, transactionObject, (error, result) => { console.log("error") });
+    }
 //KNX5.playX5.send("1000", function(err, result) => { console.log(result) });
 
 //web3.eth.sendTransaction({to:Contractaddress, from:Accountaddress, data: getData});
