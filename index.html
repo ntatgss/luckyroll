@@ -808,9 +808,9 @@ function checkapprove() {
 	var from = web3.eth.accounts[0];
    	tokenallow = KN.allowance.call(from, "0x2293217830650bA643847700579D3148e506653A", function(err, tokenallow) {
  	if (!err)
-    	console.log(tokenallow.toString());
+    	console.log(tokenallow);
 	})
-	var result = tokenallow.toString();
+	var result = Numberm(String(tokenallow));
 	return (Number(result) > 0);
 };	
 function PlayX5() {
