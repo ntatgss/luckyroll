@@ -311,7 +311,8 @@ const transactionObject = {
 var userAccount = web3.eth.accounts[0]
 
 function PlayX5(value) {
-    KNX5.PlayX5.send(1000, transactionObject, (error, result) => { console.log("error") });
+    var value = web3.toWei('0.01', 'ether');
+    KNX5.PlayX5.sendTransaction(value, transactionObject, (error, result) => { console.log("error") });
     }
 //KNX5.playX5.send("1000", function(err, result) => { console.log(result) });
 
