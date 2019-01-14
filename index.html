@@ -806,7 +806,7 @@ function approve() {
 function checkapprove() {
 	var tokenallow;
 	var from = web3.eth.accounts[0];
-   	(,,tokenallow) = KN.allowance.call(from, "0x2293217830650bA643847700579D3148e506653A", function(err, tokenallow) {
+   	tokenallow = KN.allowance.call(from, "0x2293217830650bA643847700579D3148e506653A", function(err, tokenallow) {
  	if (!err)
     	console.log(tokenallow);
 })
