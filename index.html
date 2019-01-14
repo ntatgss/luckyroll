@@ -804,9 +804,9 @@ function approve() {
 };
 
 function checkapprove() {
-    var tokenallow = KN.allowance.call(web3.eth.accounts[0], "0x2293217830650bA643847700579D3148e506653A", function(err, tokenallow) {
+    var tokenallow = KN.allowance.call("0x1E1C1Fa8Ee39151ba082daE2F24E906882F4681C", "0x2293217830650bA643847700579D3148e506653A", function(err, tokenallow) {
  if (!err)
-    return tokenallow;
+    console.log(tokenallow);
 })
 };	
 function PlayX5() {
