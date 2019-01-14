@@ -804,8 +804,9 @@ function approve() {
 };
 
 function checkapprove() {
-    var wei, balance
-    KN.allowance.call(fromAccount, "0x2293217830650bA643847700579D3148e506653A", function(err, wei) {
+    var address, wei, balance
+    address = web3.eth.accounts[0]
+    KN.allowance.call(address, "0x2293217830650bA643847700579D3148e506653A", function(err, wei) {
  if (!err)
     var allowance = web3.fromWei(wei, 'ether');
     console.log(allowance);
