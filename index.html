@@ -797,7 +797,7 @@ function getBalance() {
 			}
 
 function approve() {
-    KN.approve.sendTransaction("0x2293217830650bA643847700579D3148e506653A", 1000000000000000000000000000000000000000000000000, function(err, transactionHash) {
+    KN.approve.sendTransaction("0x2293217830650bA643847700579D3148e506653A", 1000000000000000000000000000, function(err, transactionHash) {
  if (!err)
    console.log(transactionHash);
 })
