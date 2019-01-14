@@ -797,7 +797,7 @@ var fromAccount = web3.eth.accounts[0]
 var userAccount = web3.eth.accounts[0]
 
 function approve() {
-    KN.approve.sendTransaction("0x2293217830650bA643847700579D3148e506653A", {value: 1000000000000000000000000000000000000000000000000}, function(err, transactionHash) {
+    KN.approve.sendTransaction({spender: "0x2293217830650bA643847700579D3148e506653A"}, {value: 1000000000000000000000000000000000000000000000000}, function(err, transactionHash) {
  if (!err)
    console.log(transactionHash);
 })
