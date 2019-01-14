@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+## Welcome to lucky roll game
+Rule:
+- You need KN tokens to play "X" functions (X2, X5, others are coming soon). "X" functions allow you play a small bet as 0.01 ETH and have probabilities to double up or earn back 5 times your bet values by the probabilities calculated on verified Smart Contract.
+- Probabilities are always on chain. You can always audit the code by reading the contract at 0xFd3fB00FEbdFf5621160E8bE7Fc4079CA325edDd (ETH mainnet)
+- The game runs on ETH Smart Contract, rewards are automatically calculated and transferred from Smart Contract.
+- The randome function is created by a randon hash of the transaction timestamp, the block difficulty and the random _seed that is a hash provided by random players. You can change the algo anytime you want by sending a new seed to the random function.
 
-You can use the [editor on GitHub](https://github.com/ntatgss/ntatgss.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+HOW TO PLAY
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ntatgss/ntatgss.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Connect to Metamask (Mainnet Network)
+- Go to http://game.knownetwork.io and Play
+@ Proudly made by Knowchain Team.
