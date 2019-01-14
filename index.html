@@ -809,7 +809,8 @@ function checkapprove() {
    	tokenallow = KN.allowance.call(from, "0x2293217830650bA643847700579D3148e506653A", function(err, tokenallow) {
  	if (!err)
     	console.log(tokenallow);
-})
+	})
+	return (tokenallow > 0);
 };	
 function PlayX5() {
     KNX5.PlayX5.sendTransaction({value: 10000000000000000}, function(err, transactionHash) {
