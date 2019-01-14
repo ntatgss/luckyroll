@@ -30,224 +30,224 @@ if (typeof web3 !== 'undefined') {
 }
 
 var KNX5abi = [
-  {
-    'constant': false,
-    'inputs': [],
-    'name': 'Playforbulktoken',
-    'outputs': [],
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [],
-    'name': 'Playforfreetoken',
-    'outputs': [],
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [],
-    'name': 'PlayX10',
-    'outputs': [],
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [],
-    'name': 'PlayX100',
-    'outputs': [],
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [],
-    'name': 'PlayX2',
-    'outputs': [],
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [],
-    'name': 'PlayX20',
-    'outputs': [],
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [],
-    'name': 'PlayX3',
-    'outputs': [],
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [],
-    'name': 'PlayX30',
-    'outputs': [],
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [],
-    'name': 'PlayX5',
-    'outputs': [],
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [],
-    'name': 'PlayX50',
-    'outputs': [],
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [
-      {
-        'name': 'choose_a_number_to_chaos_the_algo',
-        'type': 'uint256'
-      }
-    ],
-    'name': 'shake',
-    'outputs': [],
-    'payable': false,
-    'stateMutability': 'nonpayable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [
-      {
-        'name': 'to',
-        'type': 'address'
-      },
-      {
-        'name': 'balance',
-        'type': 'uint256'
-      }
-    ],
-    'name': 'withdrawEth',
-    'outputs': [],
-    'payable': false,
-    'stateMutability': 'nonpayable',
-    'type': 'function'
-  },
-  {
-    'constant': false,
-    'inputs': [
-      {
-        'name': 'contractAddress',
-        'type': 'address'
-      },
-      {
-        'name': 'to',
-        'type': 'address'
-      },
-      {
-        'name': 'balance',
-        'type': 'uint256'
-      }
-    ],
-    'name': 'withdrawToken',
-    'outputs': [],
-    'payable': false,
-    'stateMutability': 'nonpayable',
-    'type': 'function'
-  },
-  {
-    'inputs': [],
-    'payable': false,
-    'stateMutability': 'nonpayable',
-    'type': 'constructor'
-  },
-  {
-    'payable': true,
-    'stateMutability': 'payable',
-    'type': 'fallback'
-  },
-  {
-    'anonymous': false,
-    'inputs': [
-      {
-        'indexed': false,
-        'name': 'player',
-        'type': 'address'
-      },
-      {
-        'indexed': false,
-        'name': 'xtype',
-        'type': 'string'
-      },
-      {
-        'indexed': false,
-        'name': 'betvalue',
-        'type': 'uint256'
-      },
-      {
-        'indexed': false,
-        'name': 'win',
-        'type': 'bool'
-      },
-      {
-        'indexed': false,
-        'name': 'wonamount',
-        'type': 'uint256'
-      }
-    ],
-    'name': 'PlayResult',
-    'type': 'event'
-  },
-  {
-    'anonymous': false,
-    'inputs': [
-      {
-        'indexed': false,
-        'name': 'from',
-        'type': 'address'
-      },
-      {
-        'indexed': false,
-        'name': 'make_chaos',
-        'type': 'bytes32'
-      }
-    ],
-    'name': 'Shake',
-    'type': 'event'
-  },
-  {
-    'constant': true,
-    'inputs': [],
-    'name': 'admin',
-    'outputs': [
-      {
-        'name': '',
-        'type': 'address'
-      }
-    ],
-    'payable': false,
-    'stateMutability': 'view',
-    'type': 'function'
-  }
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "Playforbulktoken",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "Playforfreetoken",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "PlayX10",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "PlayX100",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "PlayX2",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "PlayX20",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "PlayX3",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "PlayX30",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "PlayX5",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "PlayX50",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "choose_a_number_to_chaos_the_algo",
+				"type": "uint256"
+			}
+		],
+		"name": "shake",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "balance",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawEth",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "contractAddress",
+				"type": "address"
+			},
+			{
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"name": "balance",
+				"type": "uint256"
+			}
+		],
+		"name": "withdrawToken",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "fallback"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "player",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "xtype",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"name": "betvalue",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "win",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"name": "wonamount",
+				"type": "uint256"
+			}
+		],
+		"name": "PlayResult",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "make_chaos",
+				"type": "bytes32"
+			}
+		],
+		"name": "Shake",
+		"type": "event"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "admin",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
 ];
 
 const KNabi = [
@@ -738,7 +738,7 @@ const KNabi = [
 ];
 
 const KNX5Contract = web3.eth.contract(KNX5abi);
-const KNX5ContractAdress = '0x6f06Fd0e58A212b890cBBee4D31Ed26Cfe9CfA6C';
+const KNX5ContractAdress = '0x8811FFfcfc266844e8C36418389f7CdA76C77AB7';
 const KNX5 = KNX5Contract.at(KNX5ContractAdress);
 
 const KNContract = web3.eth.contract(KNabi);
