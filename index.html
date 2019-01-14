@@ -803,13 +803,11 @@ function approve() {
 })
 };
 
-function checkapprove() {
+async function checkapprove() {
 	var tokenallow;
 	var from = web3.eth.accounts[0];
-   	tokenallow = KN.allowance.call(from, "0x2293217830650bA643847700579D3148e506653A", function(err, tokenallow) {
- 	if (!err)
-    	console.log(tokenallow);
-	})
+   	tokenallow = await KN.methods.allowance(from, "0x2293217830650bA643847700579D3148e506653A").call()
+	console.log(tokenallow)
 	var result = Number(String(tokenallow));
 	return (Number(result) > 0);
 };	
