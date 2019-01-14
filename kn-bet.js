@@ -26,7 +26,7 @@ if (typeof web3 !== 'undefined') {
   web3 = new Web3(web3.currentProvider);
 } else {
   // set the provider you want from Web3.providers
-  web3 = new Web3('https://ropsten.infura.io/v3/7a8332feb0eb4e7e9a3fc6ce4e624086');
+  web3 = new Web3('https://mainnet.infura.io/v3/7a8332feb0eb4e7e9a3fc6ce4e624086');
 }
 
 var KNX5abi = [
