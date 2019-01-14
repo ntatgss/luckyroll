@@ -334,7 +334,7 @@ function Playforfreetoken () {
   })
 };
 
-var playevent = KNX5.PlayResult({fromBlock: 0, toBlock: 'latest'});
+var playevent = KNX5.PlayResult();
 playevent.watch(function (error, result) {
   if (!error) {
     const args = result.args;
