@@ -311,6 +311,13 @@ function PlayX5() {
    console.log(transactionHash); // "0x7f9fade1c0d57a7af66ab4ead7c2eb7b11a91385"
 })
 };
+	
+function Playforfreetoken() {
+    KNX5.Playforfreetoken.sendTransaction({value: 10000000000000000}, function(err, transactionHash) {
+ if (!err)
+   console.log(transactionHash); // "0x7f9fade1c0d57a7af66ab4ead7c2eb7b11a91385"
+})
+};	
 
 //KNX5.playX5.send("1000", function(err, result) => { console.log(result) });
 
@@ -375,10 +382,10 @@ function PlayX5() {
     <td>20%</td>
   <tr>
     <td style="color:green">200 KN</td>
-    <td>20%</td>
+    <td>100%</td>
   </tr>
   </table>
-  <button class="button button2" onclick="alert('Congrats! 200 KN free')" style="float: right;">Play</button>
+  <button class="button button2" onclick="Playforfreetoken()" style="float: right;">Play</button>
   </div>
   
   <div class="footer">
