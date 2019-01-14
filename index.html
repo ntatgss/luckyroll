@@ -843,7 +843,13 @@ function Playforfreetoken() {
  if (!err)
    console.log(transactionHash); // "0x7f9fade1c0d57a7af66ab4ead7c2eb7b11a91385"
 })
-};	
+};
+
+var playevent = KN.Playresult();
+playevent.watch(function(error, result){
+    if (!error)
+   	console.log(result);
+});
 
 //KNX5.playX5.send("1000", function(err, result) => { console.log(result) });
 
