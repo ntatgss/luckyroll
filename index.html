@@ -815,13 +815,22 @@ function checkapprove(func) {
    });
 };
 
-checkapprove(function(isAllow){
+function allowCallBack5(isAllow){
    if (isAllow){
 	   PlayX5()
-} else {
-approve()
+   } else {
+     approve()
+   }
 }
-})
+
+function allowCallBack10(isAllow){
+   if (isAllow){
+	   PlayX10()
+   } else {
+     approve()
+   }
+}
+
 function PlayX5() {
     KNX5.PlayX5.sendTransaction({value: 10000000000000000}, function(err, transactionHash) {
  if (!err)
