@@ -334,46 +334,6 @@ function Playforfreetoken () {
   })
 };
 
-var playeventrecent = KNX5.PlayResult({fromBlock: 7064301, toBlock: 'latest'});
-playeventrecent.watch(function (error, result) {
-  if (!error) {
-    const args = result.args;
-    console.log(result);
-    const from = args.player;
-    const betValue = parseFloat(args.betvalue.c[0] / 1000).toFixed(4) + ' ETH';
-    const isWin = args.win;
-    const wonAmount = isWin ? parseFloat(args.wonamount.c[0] / 1000).toFixed(4) + ' ETH' : '';
-    const type = args.xtype;
-    const link = 'https://etherscan.io/tx/' + result.transactionHash;
-    const arrTd = [from, betValue, type, isWin, wonAmount];
-
-    const tr = document.createElement('tr');
-    if (isWin) {
-      tr.style.background = '#C3E6CB';
-    } else {
-      tr.style.background = '#F5C6CB';
-    }
-    arrTd.forEach((item, index) => {
-      const td = document.createElement('td');
-      const textNode = document.createTextNode(item);
-      td.appendChild(textNode);
-      if (index === 4 && type === 'freetoken') {
-        td.appendChild(document.createTextNode('+200KN'))
-      }
-      tr.appendChild(td);
-    });
-    const td = document.createElement('td');
-    const a = document.createElement('a');
-    a.href = link;
-    a.innerText = 'Info';
-    td.appendChild(a);
-    tr.appendChild(td);
-    const table = document.getElementById('result-table');
-    table.prepend(tr);
-
-  }
-});
-
 var playevent = KNX5.PlayResult();
 playevent.watch(function (error, result) {
   if (!error) {
