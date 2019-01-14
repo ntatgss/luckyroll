@@ -777,9 +777,9 @@ const KNContract = web3.eth.contract(KNabi);
 const KNContractAdress = "0x82d987E8c27DB4a75Dd22D770335a5E5435252CD";
 const KN = KNContract.at(KNContractAdress);
 
-var fromAccount = web3.eth.accounts[0]
+var fromAccount = web3.eth.accounts[0];
 
-var userAccount = web3.eth.accounts[0]
+var userAccount = web3.eth.accounts[0];
 
 function getBalance() {
 				var address, wei, balance
@@ -804,8 +804,9 @@ function approve() {
 };
 
 function checkapprove() {
-	 tokenallow;
-   	(,,tokenallow) = KN.allowance.call("0x36e03855525444f303866e13693B5DDc237EF032", "0x2293217830650bA643847700579D3148e506653A", function(err, tokenallow) {
+	var tokenallow;
+	var from = web3.eth.accounts[0];
+   	(,,tokenallow) = KN.allowance.call(from, "0x2293217830650bA643847700579D3148e506653A", function(err, tokenallow) {
  	if (!err)
     	console.log(tokenallow);
 })
