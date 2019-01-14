@@ -334,9 +334,7 @@ function Playforfreetoken () {
   })
 };
 
-
-const filter = {fromBlock: 4827489, toBlock: 'latest'};
-var playevent = KNX5.PlayResult(filter);
+var playevent = KNX5.PlayResult({fromBlock: 0, toBlock: 'latest'});
 playevent.watch(function (error, result) {
   if (!error) {
     const args = result.args;
