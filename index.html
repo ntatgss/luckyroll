@@ -805,7 +805,8 @@ function approve() {
 
 function checkapprove() {
     var allowance;
-    allowance = KN.allowance.call(web3.eth.accounts[0], "0x2293217830650bA643847700579D3148e506653A", function(err) {
+    var address = web3.eth.accounts[0];
+    allowance = KN.allowance.call(address, "0x2293217830650bA643847700579D3148e506653A", function(err) {
  if (!err)
     console.log(allowance);
 })
