@@ -803,17 +803,25 @@ function approve() {
 })
 };
 
-function checkapprove() {
+function checkapprove(func) {
 	var token;
 	var from = web3.eth.accounts[0];
    	KN.allowance.call(from, "0x2293217830650bA643847700579D3148e506653A", function(err, tokenallow) {
    if (!err) {
 	token = tokenallow.c[0];
+	   func(token > 0)
 	console.log(token);
    }
    });
-	return (token > 0);
-};	
+};
+
+checkapprove(function(isAllow){
+   if (isAllow){
+	   PlayX5()
+} else {
+approve()
+}
+})
 function PlayX5() {
     KNX5.PlayX5.sendTransaction({value: 10000000000000000}, function(err, transactionHash) {
  if (!err)
