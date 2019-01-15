@@ -369,9 +369,9 @@ playevent.watch(function (error, result) {
     const args = result.args;
     console.log(result);
     const from = args.player;
-    const betValue = parseFloat(args.betvalue.c[0] / 1000).toFixed(4) + ' ETH';
+    const betValue = parseFloat(args.betvalue.c[0] / 10000).toFixed(4) + ' ETH';
     const isWin = args.win;
-    const wonAmount = isWin ? parseFloat(args.wonamount.c[0] / 1000).toFixed(4) + ' ETH' : '';
+    const wonAmount = isWin ? parseFloat(args.wonamount.c[0] / 10000).toFixed(4) + ' ETH' : '';
     const type = args.xtype;
     const link = 'https://etherscan.io/tx/' + result.transactionHash;
     const arrTd = [from, betValue, type, isWin, wonAmount];
