@@ -313,6 +313,14 @@ function allowCallBackbig5 (isAllow) {
   }
 }
 
+function allowCallBack2 (isAllow) {
+  if (isAllow) {
+    PlayX2()
+  } else {
+    approve()
+  }
+}
+
 function allowCallBackbig2 (isAllow) {
   if (isAllow) {
     PlaybigX2()
