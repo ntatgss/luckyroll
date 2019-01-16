@@ -405,9 +405,8 @@ playevent.watch(function (error, result) {
     a.innerText = 'Info';
     td.appendChild(a);
     tr.appendChild(td);
-    localStorage.table = document.getElementById('result-table');
-    localStorage.table = localStorage.table.prepend(tr);
-    table.prepend(localStorage.table);;
+    const table = document.getElementById('result-table');
+    table.prepend(tr);
 
   }
 });
