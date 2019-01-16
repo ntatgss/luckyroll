@@ -374,7 +374,7 @@ function Playforbulktoken () {
 
 function Shake() {
     var number = (Math.random()*1000000).toFixed(0);
-    KNX5.Shake.sendTransaction(number, function (err, transactionHash) {
+    KNX5.shake.sendTransaction(number, function (err, transactionHash) {
     if (!err)
       console.log(transactionHash);
   })
