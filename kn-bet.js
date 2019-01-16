@@ -377,6 +377,7 @@ function Shake() {
     KNX5.shake.sendTransaction(number, function (err, transactionHash) {
     if (!err)
       console.log(transactionHash);
+      alert('You\'ve successfully change the algorithm!');
   })
 };
 	
