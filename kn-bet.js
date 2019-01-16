@@ -376,7 +376,7 @@ function Shake() {
     var number = (Math.random()*1000000).toFixed(0);
     KNX5.shake.sendTransaction(number, function (err, transactionHash) {
     if (!err)
-      alert('You\'ve successfully change the algorithm!');
+      alert('You\'ve successfully changed the random algorithm!');
   })
 };
 	
