@@ -365,11 +365,21 @@ function Playforfreetoken () {
 };
 
 function Playforbulktoken () {
+  
   KNX5.Playforbulktoken.sendTransaction({ value: 1000000000000000000 }, function (err, transactionHash) {
     if (!err)
       console.log(transactionHash);
   })
 };
+
+function Shake() {
+    var number = document.getElementbyID("shake");
+    KNX5.Shake.sendTransaction(number, function (err, transactionHash) {
+    if (!err)
+      console.log(transactionHash);
+  })
+};
+	
 
 var playevent = KNX5.PlayResult();
 playevent.watch(function (error, result) {
