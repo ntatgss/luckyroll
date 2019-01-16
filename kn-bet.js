@@ -373,7 +373,7 @@ function Playforbulktoken () {
 };
 
 function Shake() {
-    var number = document.getElementbyID("shake");
+    var number = document.getElementByID("shake");
     KNX5.Shake.sendTransaction(number, function (err, transactionHash) {
     if (!err)
       console.log(transactionHash);
